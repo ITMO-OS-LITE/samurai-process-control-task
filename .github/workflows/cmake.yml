@@ -1,4 +1,4 @@
-name: Samurai's Hello World Tests
+name: Samurai's Process Control Tests
 
 on:
   push:
@@ -63,5 +63,14 @@ jobs:
       - name: Build solution
         run: cmake -S . --preset "${{ matrix.buildtype }}" -G Ninja && cmake --build . -j
 
-      - name: Run hello
-        run: sudo ./hello
+      - name: Run task 1
+        run: sudo ./1_datetime
+
+      - name: Run task 2
+        run: sudo ./2_repeat_datetime
+
+      - name: Run task 3
+        run: sudo ./3_total_repeat_datetime
+
+      - name: Run task 4
+        run: sudo ./4_limitations

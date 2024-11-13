@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.8)
-PROJECT(hello LANGUAGES C)
+PROJECT(process_control LANGUAGES C)
 
 IF (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   MESSAGE(FATAL_ERROR "
@@ -32,4 +32,18 @@ FUNCTION(ADD_EXECUTABLE_WITH_SANITIZER TARGET_NAME FILE_NAME)
   ENDIF()
 ENDFUNCTION()
 
-ADD_EXECUTABLE_WITH_SANITIZER("hello" "hello.c")
+# Tasks 1-4.
+ADD_EXECUTABLE_WITH_SANITIZER("1_datetime" "1_datetime.c")
+ADD_EXECUTABLE_WITH_SANITIZER("2_repeat_datetime" "2_repeat_datetime.c")
+ADD_EXECUTABLE_WITH_SANITIZER("3_total_repeat_datetime" "3_total_repeat_datetime.c")
+ADD_EXECUTABLE_WITH_SANITIZER("4_limitations" "4_limitations.c")
+
+# Task 5.
+ADD_EXECUTABLE_WITH_SANITIZER("5_producer" "5_producer.c")
+ADD_EXECUTABLE_WITH_SANITIZER("5_handler" "5_handler.c")
+ADD_EXECUTABLE_WITH_SANITIZER("5_launcher" "5_launcher.c")
+
+# Task 6.
+ADD_EXECUTABLE_WITH_SANITIZER("6_producer" "6_producer.c")
+ADD_EXECUTABLE_WITH_SANITIZER("6_handler" "6_handler.c")
+ADD_EXECUTABLE_WITH_SANITIZER("6_launcher" "6_launcher.c")
